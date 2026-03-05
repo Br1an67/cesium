@@ -102,23 +102,20 @@ function renderBufferPointCollection(collection, frameState, renderContext) {
       positionHighArray[i * 3] = encodedCartesian.high.x;
       positionHighArray[i * 3 + 1] = encodedCartesian.high.y;
       positionHighArray[i * 3 + 2] = encodedCartesian.high.z;
-      positionHighArray[i * 3 + 3] = point.show ? 1 : 0;
 
       positionLowArray[i * 3] = encodedCartesian.low.x;
       positionLowArray[i * 3 + 1] = encodedCartesian.low.y;
       positionLowArray[i * 3 + 2] = encodedCartesian.low.z;
 
       showPixelSizeAndColorArray[i * 3] = point.show ? 1 : 0;
-      showPixelSizeAndColorArray[i * 3 + 1] = point.pixelSize;
+      showPixelSizeAndColorArray[i * 3 + 1] = 5; // TODO: Material API.
       showPixelSizeAndColorArray[i * 3 + 2] = AttributeCompression.encodeRGB8(
         point.getColor(color),
       );
 
-      outlineWidthAndOutlineColorArray[i * 2] = point.outlineWidth;
+      outlineWidthAndOutlineColorArray[i * 2] = 0; // TODO: Material API.
       outlineWidthAndOutlineColorArray[i * 2 + 1] =
-        AttributeCompression.encodeRGB8(
-          point.outlineWidth > 0 ? point.getOutlineColor(color) : color,
-        );
+        AttributeCompression.encodeRGB8(Color.WHITE); // TODO: Material API.
 
       point._dirty = false;
     }
