@@ -215,7 +215,8 @@ function renderBufferPointCollection(collection, frameState, renderContext) {
     pass: Pass.OPAQUE,
     owner: collection,
     count: collection.primitiveCount,
-    boundingVolume: collection.boundingVolume,
+    modelMatrix: collection.modelMatrix,
+    boundingVolume: collection.boundingVolumeWC,
     debugShowBoundingVolume: collection.debugShowBoundingVolume,
   });
 

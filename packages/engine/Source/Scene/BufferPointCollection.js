@@ -7,10 +7,12 @@ import Frozen from "../Core/Frozen.js";
 import renderPoints from "./renderBufferPointCollection.js";
 
 /** @import Color from "../Core/Color.js"; */
+/** @import Matrix4 from "../Core/Matrix4.js"; */
 /** @import FrameState from "./FrameState.js"; */
 
 /**
  * @typedef {object} BufferPointOptions
+ * @property {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] Transforms geometry from model to world coordinates.
  * @property {boolean} [show=true]
  * @property {Color} [color=Color.WHITE]
  * @property {Cartesian3} [position=Cartesian3.ZERO]

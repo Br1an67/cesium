@@ -372,7 +372,8 @@ function renderBufferPolylineCollection(collection, frameState, renderContext) {
     pass: Pass.OPAQUE,
     owner: collection,
     count: (collection.vertexCount - collection.primitiveCount) * 6,
-    boundingVolume: collection.boundingVolume,
+    modelMatrix: collection.modelMatrix,
+    boundingVolume: collection.boundingVolumeWC,
     debugShowBoundingVolume: collection.debugShowBoundingVolume,
   });
 
